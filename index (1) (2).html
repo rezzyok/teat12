@@ -18,7 +18,8 @@
         nav {
             background-color: #4a90e2;
             color: white;
-            display: none; /* Navigation standardmäßig ausgeblendet */
+            display: none;
+            /* Navigation standardmäßig ausgeblendet */
             justify-content: space-between;
             padding: 15px 30px;
             transition: background-color 0.3s;
@@ -287,7 +288,8 @@
             color: #e0e0e0;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #4a90e2;
             text-align: center;
         }
@@ -298,7 +300,9 @@
         }
 
         /* Eingabefelder und Buttons */
-        input[type="text"], input[type="password"], input[type="number"] {
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
             padding: 12px;
             margin: 10px 0;
             width: 100%;
@@ -309,7 +313,9 @@
             box-sizing: border-box;
         }
 
-            input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+            input[type="text"]:focus,
+            input[type="password"]:focus,
+            input[type="number"]:focus {
                 border-color: #4a90e2;
                 outline: none;
                 box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
@@ -431,7 +437,8 @@
             }
 
         /* Tabellen-Design */
-        .generated-log table, .admin-section table {
+        .generated-log table,
+        .admin-section table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -441,20 +448,25 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .generated-log th, .generated-log td, .admin-section th, .admin-section td {
+        .generated-log th,
+        .generated-log td,
+        .admin-section th,
+        .admin-section td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
             font-size: 1rem;
         }
 
-        .generated-log th, .admin-section th {
+        .generated-log th,
+        .admin-section th {
             background-color: #4a90e2;
             color: white;
             font-weight: bold;
         }
 
-        .generated-log td, .admin-section td {
+        .generated-log td,
+        .admin-section td {
             color: #333;
         }
 
@@ -469,8 +481,6 @@
             display: none;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
-
 
             /* Aktions-Buttons im Admin-Panel */
             .admin-section button.btn-sm {
@@ -487,8 +497,6 @@
             text-align: center;
             margin-top: 10px;
         }
-
-
 
         /* Card-Design für generierte Accounts */
         .account-card {
@@ -621,6 +629,7 @@
             }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -646,7 +655,7 @@
             <!-- Login Box -->
             <div class="auth-box">
                 <h3><i class="fas fa-sign-in-alt"></i> Login</h3>
-                <form onsubmit="checkLogin(event)">
+                <form id="loginForm">
                     <label><i class="fas fa-user"></i> Benutzername:</label>
                     <input type="text" id="username" required placeholder="Benutzername eingeben">
                     <label><i class="fas fa-lock"></i> Passwort:</label>
@@ -658,7 +667,7 @@
             <!-- Register Box -->
             <div class="auth-box">
                 <h3><i class="fas fa-user-plus"></i> Registrieren</h3>
-                <form onsubmit="registerUser(event)">
+                <form id="registerForm">
                     <label><i class="fas fa-user"></i> Benutzername:</label>
                     <input type="text" id="newUsername" required placeholder="Neuen Benutzernamen wählen">
                     <label><i class="fas fa-lock"></i> Passwort:</label>
@@ -722,7 +731,8 @@
         <h2><i class="fas fa-handshake"></i> Partner</h2>
 
         <div class="partner-card">
-            <img src="https://cdn.discordapp.com/attachments/1362515999730958428/1362545795597074684/b688150541105b91a1bc09391855418e.png?ex=6802c928&is=680177a8&hm=dd9ca8a8dee55db79204c13056e847410b5534329e6f1b6763dfeed79669658a&" alt="Partner Logo" class="partner-logo">
+            <img src="https://cdn.discordapp.com/attachments/1362515999730958428/1362545795597074684/b688150541105b91a1bc09391855418e.png?ex=6802c928&is=680177a8&hm=dd9ca8a8dee55db79204c13056e847410b5534329e6f1b6763dfeed79669658a&"
+                 alt="Partner Logo" class="partner-logo">
             <h3>Zenith Hub</h3>
             <p>
                 Why Choose Zenith Hub?
@@ -731,7 +741,10 @@
                 racism and promote a 100% friendly, welcoming atmosphere. You’ll also enjoy fun
                 events, giveaways, and a supportive staff team.
             </p>
-            <a href="https://discord.gg/zenithhub" target="_blank" class="discord-link"><i class="fab fa-discord"></i> Discord beitreten</a>
+            <a href="https://discord.gg/zenithhub" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i> Discord
+                beitreten
+            </a>
         </div>
     </div>
 
@@ -743,7 +756,9 @@
             <div class="redeem-box">
                 <div class="redeem-input-group">
                     <input type="text" id="upgradeCode" placeholder="Upgrade-Code eingeben" class="redeem-input">
-                    <button id="redeemButton" onclick="redeemCode()"><i class="fas fa-check-circle"></i> <span class="redeem-button-text">Einlösen</span></button>
+                    <button id="redeemButton" onclick="redeemCode()">
+                        <i class="fas fa-check-circle"></i> <span class="redeem-button-text">Einlösen</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -841,40 +856,43 @@
 
     <div id="loginToast" class="toast"></div>
 
-    <!-- Add this to the admin panel section in your HTML -->
-    <div class="code-generator-section">
-        <h4><i class="fas fa-key"></i> <span class="generate-codes-title">Upgrade-Codes generieren</span></h4>
-        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <select id="codeRankSelect" class="redeem-input" style="flex: 1;">
-                <option value="bronze">Bronze</option>
-                <option value="silver">Silver</option>
-                <option value="platinum">Platinum</option>
-            </select>
-            <button onclick="generateUpgradeCode(document.getElementById('codeRankSelect').value)">
-                <i class="fas fa-plus-circle"></i> <span class="generate-code-button">Code generieren</span>
-            </button>
-        </div>
-
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th><i class="fas fa-key"></i> <span class="code-header">Code</span></th>
-                    <th><i class="fas fa-user-tag"></i> <span class="rank-header">Rang</span></th>
-                    <th><i class="fas fa-cog"></i> <span class="actions-header">Aktionen</span></th>
-                </tr>
-            </thead>
-            <tbody id="codesTableBody"></tbody>
-        </table>
-    </div>
-
-
     <script>
         let loggedInUsername = null;
         const generatedAccountsLog = [];
         const defaultUsers = {
-            "admin": { password: "admin", loginAttempts: 0, generations: 0, ip: getFakeIP(), bannedUntil: null, banReason: null, role: "admin", lastGen: null, language: "de" },
-            "testuser": { password: "testpassword", loginAttempts: 0, generations: 0, ip: getFakeIP(), bannedUntil: null, banReason: null, role: "user", lastGen: null, language: "de" },
-            "customer1": { password: "customer123", loginAttempts: 0, generations: 0, ip: getFakeIP(), bannedUntil: null, banReason: null, role: "customer", lastGen: null, language: "de" }
+            "admin": {
+                password: "admin",
+                loginAttempts: 0,
+                generations: 0,
+                ip: getFakeIP(),
+                bannedUntil: null,
+                banReason: null,
+                role: "admin",
+                lastGen: null,
+                language: "de"
+            },
+            "testuser": {
+                password: "testpassword",
+                loginAttempts: 0,
+                generations: 0,
+                ip: getFakeIP(),
+                bannedUntil: null,
+                banReason: null,
+                role: "user",
+                lastGen: null,
+                language: "de"
+            },
+            "customer1": {
+                password: "customer123",
+                loginAttempts: 0,
+                generations: 0,
+                ip: getFakeIP(),
+                bannedUntil: null,
+                banReason: null,
+                role: "customer",
+                lastGen: null,
+                language: "de"
+            }
         };
 
         // Übersetzungen für Englisch und Deutsch
@@ -1092,37 +1110,37 @@
             }
         }
 
-            // Kontakt-Seite aktualisieren
-            document.querySelector('#contact h2').innerHTML = `<i class="fas fa-envelope"></i> ${translate('contact_title')}`;
-            document.querySelector('#contact .account-card p:first-child').textContent = translate('contact_text');
+        // Kontakt-Seite aktualisieren
+        document.querySelector('#contact h2').innerHTML = `<i class="fas fa-envelope"></i> ${translate('contact_title')}`;
+        document.querySelector('#contact .account-card p:first-child').textContent = translate('contact_text');
 
-            // Partner-Seite aktualisieren
-            if (document.getElementById('partners')) {
-                document.querySelector('#partners h2').innerHTML = `<i class="fas fa-handshake"></i> ${translate('Partners')}`;
-                document.querySelectorAll('.discord-link').forEach(link => {
-                    link.innerHTML = `<i class="fab fa-discord"></i> ${translate('discord_join')}`;
-                });
-            }
+        // Partner-Seite aktualisieren
+        if (document.getElementById('partners')) {
+            document.querySelector('#partners h2').innerHTML = `<i class="fas fa-handshake"></i> ${translate('Partners')}`;
+            document.querySelectorAll('.discord-link').forEach(link => {
+                link.innerHTML = `<i class="fab fa-discord"></i> ${translate('discord_join')}`;
+            });
+        }
 
-            // Upgrade-Seite aktualisieren
-            document.querySelector('#upgrades h2').innerHTML = `<i class="fas fa-crown"></i> ${translate('upgrades')}`;
-            document.getElementById('upgradeCode').placeholder = translate('upgrade_code');
-            document.querySelector('.redeem-button-text').textContent = translate('redeem_button');
-            document.querySelector('.nav-upgrade-text').textContent = translate('upgrades');
+        // Upgrade-Seite aktualisieren
+        document.querySelector('#upgrades h2').innerHTML = `<i class="fas fa-crown"></i> ${translate('upgrades')}`;
+        document.getElementById('upgradeCode').placeholder = translate('upgrade_code');
+        document.querySelector('.redeem-button-text').textContent = translate('redeem_button');
+        document.querySelector('.nav-upgrade-text').textContent = translate('upgrades');
 
-            // Account-Seite aktualisieren
-            document.querySelector('#accountInfoPage h2').innerHTML = `<i class="fas fa-user-circle"></i> ${translate('account_info')}`;
-            document.querySelector('.user-info-card h3').innerHTML = `<i class="fas fa-id-card"></i> ${translate('user_info')}`;
-            document.querySelector('.user-info-card button').innerHTML = `<i class="fas fa-sign-out-alt"></i> ${translate('logout')}`;
+        // Account-Seite aktualisieren
+        document.querySelector('#accountInfoPage h2').innerHTML = `<i class="fas fa-user-circle"></i> ${translate('account_info')}`;
+        document.querySelector('.user-info-card h3').innerHTML = `<i class="fas fa-id-card"></i> ${translate('user_info')}`;
+        document.querySelector('.user-info-card button').innerHTML = `<i class="fas fa-sign-out-alt"></i> ${translate('logout')}`;
 
-            // Dark Mode Toggle
-            document.querySelector('label[for="darkModeSwitch"]').innerHTML = `<i class="fas fa-moon"></i> ${translate('dark_mode')}:`;
+        // Dark Mode Toggle
+        document.querySelector('label[for="darkModeSwitch"]').innerHTML = `<i class="fas fa-moon"></i> ${translate('dark_mode')}:`;
 
-            // Admin Panel wenn vorhanden
-            if (document.getElementById('adminPanel').style.display === 'block') {
-                document.querySelector('#adminPanel h3').innerHTML = `<i class="fas fa-user-shield"></i> ${translate('admin_panel')}`;
-                document.querySelector('#adminPanel h4').innerHTML = `<i class="fas fa-users-cog"></i> ${translate('manage_accounts')}:`;
-            }
+        // Admin Panel wenn vorhanden
+        if (document.getElementById('adminPanel').style.display === 'block') {
+            document.querySelector('#adminPanel h3').innerHTML = `<i class="fas fa-user-shield"></i> ${translate('admin_panel')}`;
+            document.querySelector('#adminPanel h4').innerHTML = `<i class="fas fa-users-cog"></i> ${translate('manage_accounts')}:`;
+        }
 
 
         // Aktualisiere die Sprache auf der Authentifizierungsseite
@@ -1284,7 +1302,8 @@
                 return;
             }
 
-            const code = generateRandomCode();
+            let code = generateRandomCode();
+            code = code.toUpperCase(); // Konvertiere den generierten Code in Großbuchstaben
             const allCodes = loadGeneratedCodes();
 
             // Store the code with its rank
@@ -1308,14 +1327,14 @@
             for (const [code, rank] of Object.entries(allCodes)) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                <td>${code}</td>
-                <td>${rank}</td>
-                <td>
-                    <button class="btn-sm" onclick="deleteCode('${code}')">
-                        <i class="fas fa-trash"></i> ${translate('delete')}
-                    </button>
-                </td>
-            `;
+                                <td>${code}</td>
+                                <td>${rank}</td>
+                                <td>
+                                    <button class="btn-sm" onclick="deleteCode('${code}')">
+                                        <i class="fas fa-trash"></i> ${translate('delete')}
+                                    </button>
+                                </td>
+                            `;
                 codesTableBody.appendChild(row);
             }
         }
@@ -1325,7 +1344,7 @@
             const allCodes = loadGeneratedCodes();
             delete allCodes[code];
             saveGeneratedCodes(allCodes);
-            updateCodesTable();
+            updateCodesTable(); // Stelle sicher, dass die Tabelle aktualisiert wird
             showToast(`<i class="fas fa-trash"></i> ${translate('code_deleted')}`);
         }
 
@@ -1337,20 +1356,18 @@
                 return;
             }
 
-            // Check hardcoded codes first
-            let rank = upgradeCodes[code];
+            // Check generated codes first
+            const generatedCodes = loadGeneratedCodes();
+            let rank = generatedCodes[code];
 
-            // If not found in hardcoded codes, check generated codes
-            if (!rank) {
-                const generatedCodes = loadGeneratedCodes();
-                rank = generatedCodes[code];
-
+            if (rank) {
                 // If found in generated codes, remove it after use
-                if (rank) {
-                    delete generatedCodes[code];
-                    saveGeneratedCodes(generatedCodes);
-                    updateCodesTable(); // Update the admin panel if visible
-                }
+                delete generatedCodes[code];
+                saveGeneratedCodes(generatedCodes);
+                updateCodesTable(); // Update the admin panel if visible
+            } else {
+                // If not found in generated codes, check hardcoded codes
+                rank = upgradeCodes[code];
             }
 
             if (rank) {
@@ -1371,59 +1388,6 @@
             }
         }
 
-
-        // Funktion zum Einlösen des Codes
-        function redeemCode() {
-            const code = document.getElementById('upgradeCode').value.trim().toUpperCase();
-            if (!loggedInUsername) {
-                showToast(`<i class="fas fa-exclamation-circle"></i> ${translate('please_login_first')}`, true);
-                return;
-            }
-
-            if (upgradeCodes[code]) {
-                const rank = upgradeCodes[code];
-                const user = userStats[loggedInUsername];
-
-                // Speichere den alten Rang für die Erfolgsmeldung
-                const oldRank = user.role;
-
-                // Setze den neuen Rang
-                user.role = rank;
-                saveUserStats();
-
-                // Aktualisiere die Anzeige
-                updateAccountInfo();
-
-                // Zeige Erfolgsmeldung
-                showToast(`<i class="fas fa-check-circle"></i> ${translate('rank_upgraded')} ${oldRank} → ${rank}!`);
-
-                // Leere das Eingabefeld
-                document.getElementById('upgradeCode').value = '';
-            } else {
-                showToast(`<i class="fas fa-times-circle"></i> ${translate('invalid_code')}`, true);
-            }
-        }
-
-        // Funktion zum Berechnen des Cooldowns basierend auf dem Rang
-        function getCooldownForRank(rank) {
-            switch (rank) {
-                case "bronze":
-                    return 30 * 60 * 1000; // 30 Minuten
-                case "silver":
-                    return 15 * 60 * 1000; // 15 Minuten
-                case "platinum":
-                    return 2 * 60 * 1000;  // 2 Minuten
-                case "admin":
-                    return 0; // Kein Cooldown für Admin
-                case "user":
-                    return 60 * 60 * 1000; // 1 Stunde (Standard)
-                case "customer":
-                    return 10 * 60 * 1000; // 10 Minuten
-                default:
-                    return 60 * 60 * 1000; // Standard: 1 Stunde
-            }
-        }
-
         function updateAccountInfo() {
             const u = userStats[loggedInUsername];
 
@@ -1434,44 +1398,83 @@
 
             // Benutzerinformationen mit Icons anzeigen
             document.getElementById('userInfo').innerHTML = `
-                                        <div class="info-item">
-                                            <i class="fas fa-user"></i>
-                                            <span><span class="info-label">${translate('username')}:</span> ${loggedInUsername}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-user-tag"></i>
-                                            <span><span class="info-label">${translate('role')}:</span> ${u.role}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-history"></i>
-                                            <span><span class="info-label">${translate('generations')}:</span> ${u.generations}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-sign-in-alt"></i>
-                                            <span><span class="info-label">${translate('login_attempts')}:</span> ${u.loginAttempts}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-network-wired"></i>
-                                            <span><span class="info-label">${translate('ip')}:</span> ${u.ip}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-globe"></i>
-                                            <span><span class="info-label">${translate('language')}:</span> ${u.language === 'en' ? 'English' : 'Deutsch'}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-clock"></i>
-                                            <span><span class="info-label">${translate('banned_until')}:</span> ${u.bannedUntil ? new Date(u.bannedUntil).toLocaleString() : translate('not_banned')}</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <i class="fas fa-info-circle"></i>
-                                            <span><span class="info-label">${translate('ban_reason')}:</span> ${u.banReason || translate('no_reason')}</span>
-                                        </div>
-                                    `;
+                                                        <div class="info-item">
+                                                            <i class="fas fa-user"></i>
+                                                            <span><span class="info-label">${translate('username')}:</span> ${loggedInUsername}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-user-tag"></i>
+                                                            <span><span class="info-label">${translate('role')}:</span> ${u.role}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-history"></i>
+                                                            <span><span class="info-label">${translate('generations')}:</span> ${u.generations}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-sign-in-alt"></i>
+                                                            <span><span class="info-label">${translate('login_attempts')}:</span> ${u.loginAttempts}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-network-wired"></i>
+                                                            <span><span class="info-label">${translate('ip')}:</span> ${u.ip}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-globe"></i>
+                                                            <span><span class="info-label">${translate('language')}:</span> ${u.language === 'en' ? 'English' : 'Deutsch'}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-clock"></i>
+                                                            <span><span class="info-label">${translate('banned_until')}:</span> ${u.bannedUntil ? new Date(u.bannedUntil).toLocaleString() : translate('not_banned')}</span>
+                                                        </div>
+                                                        <div class="info-item">
+                                                            <i class="fas fa-info-circle"></i>
+                                                            <span><span class="info-label">${translate('ban_reason')}:</span> ${u.banReason || translate('no_reason')}</span>
+                                                        </div>
+                                                    `;
 
+            const adminPanel = document.getElementById('adminPanel');
             if (u.role === 'admin') {
-                const adminPanel = document.getElementById('adminPanel');
                 adminPanel.style.display = 'block';
+                // Füge den Code-Generator-Bereich nur hinzu, wenn der Benutzer ein Admin ist
+                if (!document.getElementById('codeGeneratorSection')) {
+                    const codeGeneratorSection = document.createElement('div');
+                    codeGeneratorSection.id = 'codeGeneratorSection';
+                    codeGeneratorSection.classList.add('code-generator-section');
+                    codeGeneratorSection.innerHTML = `
+                                    <h4><i class="fas fa-key"></i> <span class="generate-codes-title">${translate('generate_codes_title')}</span></h4>
+                                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                        <select id="codeRankSelect" class="redeem-input" style="flex: 1;">
+                                            <option value="bronze">Bronze</option>
+                                            <option value="silver">Silver</option>
+                                            <option value="platinum">Platinum</option>
+                                        </select>
+                                        <button onclick="generateUpgradeCode(document.getElementById('codeRankSelect').value)">
+                                            <i class="fas fa-plus-circle"></i> <span class="generate-code-button">${translate('generate_code_button')}</span>
+                                        </button>
+                                    </div>
+
+                                    <table width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th><i class="fas fa-key"></i> <span class="code-header">${translate('code_header')}</span></th>
+                                                <th><i class="fas fa-user-tag"></i> <span class="rank-header">${translate('rank_header')}</span></th>
+                                                <th><i class="fas fa-cog"></i> <span class="actions-header">${translate('actions_header')}</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="codesTableBody"></tbody>
+                                    </table>
+                                `;
+                    adminPanel.appendChild(codeGeneratorSection);
+                }
                 populateUserTable();
+                updateCodesTable(); // Stelle sicher, dass die Tabelle aktualisiert wird
+            } else {
+                adminPanel.style.display = 'none';
+                // Entferne den Code-Generator-Bereich, wenn der Benutzer kein Admin ist
+                const codeGeneratorSection = document.getElementById('codeGeneratorSection');
+                if (codeGeneratorSection) {
+                    codeGeneratorSection.remove();
+                }
             }
 
             // Account-Generierung deaktivieren, wenn der Benutzer gesperrt ist
@@ -1487,7 +1490,6 @@
             updateUILanguage();
         }
 
-        // Modify the populateUserTable function to also update the codes table
         function populateUserTable() {
             const tbody = document.getElementById('userTableBody');
             tbody.innerHTML = '';
@@ -1495,30 +1497,29 @@
                 const user = userStats[username];
                 const row = document.createElement('tr');
                 row.innerHTML = `
-            <td>${username}</td>
-            <td>${user.role}</td>
-            <td>${user.loginAttempts}</td>
-            <td>${user.generations}</td>
-            <td>${user.ip}</td>
-            <td>${user.bannedUntil ? new Date(user.bannedUntil).toLocaleString() + '<br>' + translate('reason') + ': ' + user.banReason : translate('not_banned')}</td>
-            <td>
-                <div style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
-                    <input type="number" id="banHours${username}" placeholder="${translate('ban_hours')}" min="1" style="width:70px;">
-                    <input type="text" id="banReason${username}" placeholder="${translate('ban_reason')}" style="flex-grow: 1;">
-                    <button class="btn-sm" onclick="banUser('${username}')"><i class="fas fa-ban"></i> ${translate('ban')}</button>
-                    <button class="btn-sm" onclick="unbanUser('${username}')"><i class="fas fa-unlock"></i> ${translate('unban')}</button>
-                    <button class="btn-sm" onclick="deleteUser('${username}')"><i class="fas fa-trash"></i> ${translate('delete')}</button>
-                    <button class="btn-sm" onclick="assignRole('${username}')"><i class="fas fa-user-tag"></i> ${translate('change_role')}</button>
-                </div>
-            </td>
-        `;
+                            <td>${username}</td>
+                            <td>${user.role}</td>
+                            <td>${user.loginAttempts}</td>
+                            <td>${user.generations}</td>
+                            <td>${user.ip}</td>
+                            <td>${user.bannedUntil ? new Date(user.bannedUntil).toLocaleString() + '<br>' + translate('reason') + ': ' + user.banReason : translate('not_banned')}</td>
+                            <td>
+                                <div style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
+                                    <input type="number" id="banHours${username}" placeholder="${translate('ban_hours')}" min="1" style="width:70px;">
+                                    <input type="text" id="banReason${username}" placeholder="${translate('ban_reason')}" style="flex-grow: 1;">
+                                    <button class="btn-sm" onclick="banUser('${username}')"><i class="fas fa-ban"></i> ${translate('ban')}</button>
+                                    <button class="btn-sm" onclick="unbanUser('${username}')"><i class="fas fa-unlock"></i> ${translate('unban')}</button>
+                                    <button class="btn-sm" onclick="deleteUser('${username}')"><i class="fas fa-trash"></i> ${translate('delete')}</button>
+                                    <button class="btn-sm" onclick="assignRole('${username}')"><i class="fas fa-user-tag"></i> ${translate('change_role')}</button>
+                                </div>
+                            </td>
+                        `;
                 tbody.appendChild(row);
             }
 
             // Also update the codes table
             updateCodesTable();
         }
-
 
         function banUser(username) {
             const user = userStats[username];
@@ -1597,6 +1598,21 @@
             }, 3000);
         }
 
+        function getCooldownForRank(role) {
+            switch (role) {
+                case 'bronze':
+                    return 30 * 60 * 1000; // 30 Minuten
+                case 'silver':
+                    return 15 * 60 * 1000; // 15 Minuten
+                case 'platinum':
+                    return 0; // Kein Cooldown
+                default:
+                    return 60 * 60 * 1000; // 60 Minuten (Standard für 'user')
+            }
+        }
+
+        let timerInterval; // Variable für das Timer-Intervall
+
         function generateAccount() {
             const u = userStats[loggedInUsername];
 
@@ -1606,7 +1622,9 @@
                 if (now < new Date(u.bannedUntil)) {
                     const remainingTime = new Date(u.bannedUntil) - now;
                     const remainingMinutes = Math.ceil(remainingTime / (1000 * 60));
-                    document.getElementById('cooldownTimer').textContent = translate('cooldown', { time: `${remainingMinutes} ${translate('minutes')}` });
+                    document.getElementById('cooldownTimer').textContent = translate('cooldown', {
+                        time: `${remainingMinutes} ${translate('minutes')}`
+                    });
                     showToast(`<i class="fas fa-clock"></i> ${translate('wait_ban')}`, true);
                     return;
                 }
@@ -1627,7 +1645,9 @@
                     minutes.toString().padStart(2, '0') + ':' +
                     secs.toString().padStart(2, '0');
 
-                showToast(`<i class="fas fa-clock"></i> ${translate('cooldown', { time: timeString })}`, true);
+                showToast(`<i class="fas fa-clock"></i> ${translate('cooldown', {
+                    time: timeString
+                })}`, true);
                 return;
             }
 
@@ -1636,23 +1656,26 @@
 
             document.getElementById('generatedAccountDisplay').style.display = 'block';
             document.getElementById('generatedAccountInfo').innerHTML = `
-                            <div class="account-info">
-                                <div class="account-info-item">
-                                    <i class="fas fa-user"></i>
-                                    <span><strong>${translate('username')}:</strong> ${username}</span>
-                                </div>
-                                <div class="account-info-item">
-                                    <i class="fas fa-key"></i>
-                                    <span><strong>${translate('password')}:</strong> ${password}</span>
-                                </div>
-                            </div>
-                        `;
+                                        <div class="account-info">
+                                            <div class="account-info-item">
+                                                <i class="fas fa-user"></i>
+                                                <span><strong>${translate('username')}:</strong> ${username}</span>
+                                            </div>
+                                            <div class="account-info-item">
+                                                <i class="fas fa-key"></i>
+                                                <span><strong>${translate('password')}:</strong> ${password}</span>
+                                            </div>
+                                        </div>
+                                    `;
 
             u.generations++;
             u.lastGen = now.toISOString();
             saveUserStats();
 
-            generatedAccountsLog.push({ username, password });
+            generatedAccountsLog.push({
+                username,
+                password
+            });
 
             // Timer sofort anzeigen nach dem Generieren
             if (cooldown > 0) {
@@ -1682,10 +1705,11 @@
                 minutes.toString().padStart(2, '0') + ':' +
                 secs.toString().padStart(2, '0');
 
-            document.getElementById('cooldownTimer').textContent = translate('cooldown', { time: timeString });
+            document.getElementById('cooldownTimer').textContent = translate('cooldown', {
+                time: timeString
+            });
         }
 
-        let timerInterval;
 
         function startCooldownTimer(seconds) {
             // Vorherigen Timer löschen, falls vorhanden
@@ -1713,9 +1737,9 @@
             generatedAccountsLog.forEach(log => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                                                        <td>${log.username}</td>
-                                                        <td>${log.password}</td>
-                                                    `;
+                                                                    <td>${log.username}</td>
+                                                                    <td>${log.password}</td>
+                                                                `;
                 tbody.appendChild(row);
             });
         }
@@ -1745,6 +1769,21 @@
             const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
             document.getElementById('darkModeSwitch').checked = darkModeEnabled;
             document.body.classList.toggle('dark-mode', darkModeEnabled);
+
+            // Füge Event Listener für die Formulare hinzu
+            document.getElementById('loginForm').addEventListener('submit', checkLogin);
+            document.getElementById('registerForm').addEventListener('submit', registerUser);
+
+            // Initialisiere die UI
+            if (loggedInUsername) {
+                document.getElementById('navbar').style.display = 'flex';
+                document.getElementById('accountText').style.display = 'inline';
+                document.getElementById('login').style.display = 'none';
+                showPage('home');
+                updateAccountInfo();
+                updateUILanguage();
+            }
+
         });
 
         // Initially hide the generated accounts log
